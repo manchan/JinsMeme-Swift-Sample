@@ -15,6 +15,7 @@ Using JINS MEME SDK version 1.0.5.
 ## Requirements
 
 - iOS 9.0+
+- Bluetooth 4.0（BLE）
 - J!NS MEME Device
 
 ##How to build
