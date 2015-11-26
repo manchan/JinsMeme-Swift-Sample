@@ -20,6 +20,9 @@ Using JINS MEME SDK version 1.0.5.
 ##How to build
 
 JUST BUILD with **Xcode 7**.
+Please set AppClientId / ClientScecret at developer site
+And edit `AppDelegate.swift` at line 20
+More info at https://developers.jins.com/ja/apps/create/
 
 
 ##Contents
