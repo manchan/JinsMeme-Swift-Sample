@@ -16,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        MEMELib.setAppClientId("***************", clientSecret: "***************")
+        NSLog("Please set AppClientId / ClientScecret at developer site");
+        NSLog("More info at https://developers.jins.com/ja/apps/create/");
         return true
     }
 

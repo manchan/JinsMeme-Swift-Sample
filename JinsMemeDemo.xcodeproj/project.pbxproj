@@ -14,6 +14,26 @@
 		4D3CA17B1BFF7182006BDDDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CA1791BFF7182006BDDDA /* LaunchScreen.storyboard */; };
 		4D3CA1861BFF7182006BDDDA /* JinsMemeDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3CA1851BFF7182006BDDDA /* JinsMemeDemoTests.swift */; };
 		4D3CA1911BFF7182006BDDDA /* JinsMemeDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3CA1901BFF7182006BDDDA /* JinsMemeDemoUITests.swift */; };
+		4D3CA19F1BFF7196006BDDDA /* MEMELib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA19E1BFF7195006BDDDA /* MEMELib.framework */; settings = {ASSET_TAGS = (); }; };
+		4D3CA1A01BFF71A9006BDDDA /* MEMELib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA19E1BFF7195006BDDDA /* MEMELib.framework */; };
+		4D3CA1A11BFF71A9006BDDDA /* MEMELib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA19E1BFF7195006BDDDA /* MEMELib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4D3CA1A41BFF71BF006BDDDA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA1A31BFF71BF006BDDDA /* CoreGraphics.framework */; };
+		4D3CA1A61BFF71C8006BDDDA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA1A51BFF71C8006BDDDA /* Accounts.framework */; };
+		4D3CA1A81BFF71D2006BDDDA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA1A71BFF71D2006BDDDA /* CFNetwork.framework */; };
+		4D3CA1AA1BFF71DA006BDDDA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA1A91BFF71DA006BDDDA /* CoreLocation.framework */; };
+		4D3CA1AC1BFF71E3006BDDDA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA1AB1BFF71E3006BDDDA /* UIKit.framework */; };
+		4D3CA1AE1BFF71EC006BDDDA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA1AD1BFF71EC006BDDDA /* Social.framework */; };
+		4D3CA1B01BFF71FC006BDDDA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA1AF1BFF71FC006BDDDA /* Security.framework */; };
+		4D3CA1B21BFF7206006BDDDA /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA1B11BFF7206006BDDDA /* CoreBluetooth.framework */; };
+		4D3CA1B41BFF7210006BDDDA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA1B31BFF7210006BDDDA /* SystemConfiguration.framework */; };
+		4D3CA1B61BFF721C006BDDDA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA1B51BFF721C006BDDDA /* AudioToolbox.framework */; };
+		4D3CA1B81BFF7229006BDDDA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA1B71BFF7229006BDDDA /* MobileCoreServices.framework */; };
+		4D3CA1BA1BFF7233006BDDDA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA1B91BFF7233006BDDDA /* StoreKit.framework */; };
+		4D3CA1BC1BFF723D006BDDDA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA1BB1BFF723D006BDDDA /* Foundation.framework */; };
+		4D3CA1BE1BFF7244006BDDDA /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA1BD1BFF7244006BDDDA /* AdSupport.framework */; };
+		4D3CA2251C004030006BDDDA /* MMDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3CA2241C004030006BDDDA /* MMDataViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4D3CA2341C057F07006BDDDA /* MMDataDetaileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3CA2331C057F07006BDDDA /* MMDataDetaileViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4D3CA2361C058719006BDDDA /* RealtimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3CA2351C058719006BDDDA /* RealtimeData.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +53,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4D3CA1A21BFF71A9006BDDDA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4D3CA1A11BFF71A9006BDDDA /* MEMELib.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4D3CA16D1BFF7182006BDDDA /* JinsMemeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JinsMemeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D3CA1701BFF7182006BDDDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +81,26 @@
 		4D3CA18C1BFF7182006BDDDA /* JinsMemeDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JinsMemeDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D3CA1901BFF7182006BDDDA /* JinsMemeDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JinsMemeDemoUITests.swift; sourceTree = "<group>"; };
 		4D3CA1921BFF7182006BDDDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D3CA19E1BFF7195006BDDDA /* MEMELib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MEMELib.framework; sourceTree = "<group>"; };
+		4D3CA1A31BFF71BF006BDDDA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4D3CA1A51BFF71C8006BDDDA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		4D3CA1A71BFF71D2006BDDDA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		4D3CA1A91BFF71DA006BDDDA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4D3CA1AB1BFF71E3006BDDDA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4D3CA1AD1BFF71EC006BDDDA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		4D3CA1AF1BFF71FC006BDDDA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4D3CA1B11BFF7206006BDDDA /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		4D3CA1B31BFF7210006BDDDA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4D3CA1B51BFF721C006BDDDA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4D3CA1B71BFF7229006BDDDA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		4D3CA1B91BFF7233006BDDDA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		4D3CA1BB1BFF723D006BDDDA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4D3CA1BD1BFF7244006BDDDA /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		4D3CA1BF1BFF72D1006BDDDA /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		4D3CA2241C004030006BDDDA /* MMDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMDataViewController.swift; sourceTree = "<group>"; };
+		4D3CA2261C00A274006BDDDA /* MEMELib_RealTime-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MEMELib_RealTime-Prefix.pch"; sourceTree = "<group>"; };
+		4D3CA2331C057F07006BDDDA /* MMDataDetaileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMDataDetaileViewController.swift; sourceTree = "<group>"; };
+		4D3CA2351C058719006BDDDA /* RealtimeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealtimeData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +108,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D3CA1BE1BFF7244006BDDDA /* AdSupport.framework in Frameworks */,
+				4D3CA1BC1BFF723D006BDDDA /* Foundation.framework in Frameworks */,
+				4D3CA1BA1BFF7233006BDDDA /* StoreKit.framework in Frameworks */,
+				4D3CA1B81BFF7229006BDDDA /* MobileCoreServices.framework in Frameworks */,
+				4D3CA1B61BFF721C006BDDDA /* AudioToolbox.framework in Frameworks */,
+				4D3CA1B41BFF7210006BDDDA /* SystemConfiguration.framework in Frameworks */,
+				4D3CA1B21BFF7206006BDDDA /* CoreBluetooth.framework in Frameworks */,
+				4D3CA1B01BFF71FC006BDDDA /* Security.framework in Frameworks */,
+				4D3CA1AE1BFF71EC006BDDDA /* Social.framework in Frameworks */,
+				4D3CA1AC1BFF71E3006BDDDA /* UIKit.framework in Frameworks */,
+				4D3CA1AA1BFF71DA006BDDDA /* CoreLocation.framework in Frameworks */,
+				4D3CA1A81BFF71D2006BDDDA /* CFNetwork.framework in Frameworks */,
+				4D3CA1A61BFF71C8006BDDDA /* Accounts.framework in Frameworks */,
+				4D3CA1A41BFF71BF006BDDDA /* CoreGraphics.framework in Frameworks */,
+				4D3CA1A01BFF71A9006BDDDA /* MEMELib.framework in Frameworks */,
+				4D3CA19F1BFF7196006BDDDA /* MEMELib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +147,7 @@
 		4D3CA1641BFF7182006BDDDA = {
 			isa = PBXGroup;
 			children = (
+				4D3CA2321C057685006BDDDA /* Frameworks */,
 				4D3CA16F1BFF7182006BDDDA /* JinsMemeDemo */,
 				4D3CA1841BFF7182006BDDDA /* JinsMemeDemoTests */,
 				4D3CA18F1BFF7182006BDDDA /* JinsMemeDemoUITests */,
@@ -99,10 +170,15 @@
 			children = (
 				4D3CA1701BFF7182006BDDDA /* AppDelegate.swift */,
 				4D3CA1721BFF7182006BDDDA /* ViewController.swift */,
+				4D3CA2241C004030006BDDDA /* MMDataViewController.swift */,
+				4D3CA2331C057F07006BDDDA /* MMDataDetaileViewController.swift */,
+				4D3CA2351C058719006BDDDA /* RealtimeData.swift */,
 				4D3CA1741BFF7182006BDDDA /* Main.storyboard */,
 				4D3CA1771BFF7182006BDDDA /* Assets.xcassets */,
 				4D3CA1791BFF7182006BDDDA /* LaunchScreen.storyboard */,
 				4D3CA17C1BFF7182006BDDDA /* Info.plist */,
+				4D3CA1BF1BFF72D1006BDDDA /* Bridging-Header.h */,
+				4D3CA2261C00A274006BDDDA /* MEMELib_RealTime-Prefix.pch */,
 			);
 			path = JinsMemeDemo;
 			sourceTree = "<group>";
@@ -125,6 +201,28 @@
 			path = JinsMemeDemoUITests;
 			sourceTree = "<group>";
 		};
+		4D3CA2321C057685006BDDDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D3CA1BD1BFF7244006BDDDA /* AdSupport.framework */,
+				4D3CA1BB1BFF723D006BDDDA /* Foundation.framework */,
+				4D3CA1B91BFF7233006BDDDA /* StoreKit.framework */,
+				4D3CA1B71BFF7229006BDDDA /* MobileCoreServices.framework */,
+				4D3CA1B51BFF721C006BDDDA /* AudioToolbox.framework */,
+				4D3CA1B31BFF7210006BDDDA /* SystemConfiguration.framework */,
+				4D3CA1B11BFF7206006BDDDA /* CoreBluetooth.framework */,
+				4D3CA1AF1BFF71FC006BDDDA /* Security.framework */,
+				4D3CA1AD1BFF71EC006BDDDA /* Social.framework */,
+				4D3CA1AB1BFF71E3006BDDDA /* UIKit.framework */,
+				4D3CA1A91BFF71DA006BDDDA /* CoreLocation.framework */,
+				4D3CA1A71BFF71D2006BDDDA /* CFNetwork.framework */,
+				4D3CA1A51BFF71C8006BDDDA /* Accounts.framework */,
+				4D3CA1A31BFF71BF006BDDDA /* CoreGraphics.framework */,
+				4D3CA19E1BFF7195006BDDDA /* MEMELib.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +233,7 @@
 				4D3CA1691BFF7182006BDDDA /* Sources */,
 				4D3CA16A1BFF7182006BDDDA /* Frameworks */,
 				4D3CA16B1BFF7182006BDDDA /* Resources */,
+				4D3CA1A21BFF71A9006BDDDA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,6 +291,11 @@
 				TargetAttributes = {
 					4D3CA16C1BFF7182006BDDDA = {
 						CreatedOnToolsVersion = 7.0.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					4D3CA1801BFF7182006BDDDA = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -257,6 +361,9 @@
 			files = (
 				4D3CA1731BFF7182006BDDDA /* ViewController.swift in Sources */,
 				4D3CA1711BFF7182006BDDDA /* AppDelegate.swift in Sources */,
+				4D3CA2361C058719006BDDDA /* RealtimeData.swift in Sources */,
+				4D3CA2341C057F07006BDDDA /* MMDataDetaileViewController.swift in Sources */,
+				4D3CA2251C004030006BDDDA /* MMDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,10 +505,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = JinsMemeDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = matz.JinsMemeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -409,10 +521,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = JinsMemeDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = matz.JinsMemeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -483,6 +600,7 @@
 				4D3CA1971BFF7182006BDDDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D3CA1981BFF7182006BDDDA /* Build configuration list for PBXNativeTarget "JinsMemeDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +609,7 @@
 				4D3CA19A1BFF7182006BDDDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D3CA19B1BFF7182006BDDDA /* Build configuration list for PBXNativeTarget "JinsMemeDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +618,7 @@
 				4D3CA19D1BFF7182006BDDDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
