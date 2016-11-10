@@ -14,7 +14,6 @@
 		4D3CA17B1BFF7182006BDDDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CA1791BFF7182006BDDDA /* LaunchScreen.storyboard */; };
 		4D3CA1861BFF7182006BDDDA /* JinsMemeDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3CA1851BFF7182006BDDDA /* JinsMemeDemoTests.swift */; };
 		4D3CA1911BFF7182006BDDDA /* JinsMemeDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3CA1901BFF7182006BDDDA /* JinsMemeDemoUITests.swift */; };
-		4D3CA19F1BFF7196006BDDDA /* MEMELib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA19E1BFF7195006BDDDA /* MEMELib.framework */; settings = {ASSET_TAGS = (); }; };
 		4D3CA1A01BFF71A9006BDDDA /* MEMELib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA19E1BFF7195006BDDDA /* MEMELib.framework */; };
 		4D3CA1A11BFF71A9006BDDDA /* MEMELib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA19E1BFF7195006BDDDA /* MEMELib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4D3CA1A41BFF71BF006BDDDA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA1A31BFF71BF006BDDDA /* CoreGraphics.framework */; };
@@ -31,9 +30,9 @@
 		4D3CA1BA1BFF7233006BDDDA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA1B91BFF7233006BDDDA /* StoreKit.framework */; };
 		4D3CA1BC1BFF723D006BDDDA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA1BB1BFF723D006BDDDA /* Foundation.framework */; };
 		4D3CA1BE1BFF7244006BDDDA /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3CA1BD1BFF7244006BDDDA /* AdSupport.framework */; };
-		4D3CA2251C004030006BDDDA /* MMDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3CA2241C004030006BDDDA /* MMDataViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		4D3CA2341C057F07006BDDDA /* MMDataDetaileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3CA2331C057F07006BDDDA /* MMDataDetaileViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		4D3CA2361C058719006BDDDA /* RealtimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3CA2351C058719006BDDDA /* RealtimeData.swift */; settings = {ASSET_TAGS = (); }; };
+		4D3CA2251C004030006BDDDA /* MMDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3CA2241C004030006BDDDA /* MMDataViewController.swift */; };
+		4D3CA2341C057F07006BDDDA /* MMDataDetaileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3CA2331C057F07006BDDDA /* MMDataDetaileViewController.swift */; };
+		4D3CA2361C058719006BDDDA /* RealtimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3CA2351C058719006BDDDA /* RealtimeData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,7 +122,6 @@
 				4D3CA1A61BFF71C8006BDDDA /* Accounts.framework in Frameworks */,
 				4D3CA1A41BFF71BF006BDDDA /* CoreGraphics.framework in Frameworks */,
 				4D3CA1A01BFF71A9006BDDDA /* MEMELib.framework in Frameworks */,
-				4D3CA19F1BFF7196006BDDDA /* MEMELib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,11 +284,14 @@
 		4D3CA1651BFF7182006BDDDA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = matz;
 				TargetAttributes = {
 					4D3CA16C1BFF7182006BDDDA = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = GWLX5H944K;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -299,10 +300,12 @@
 					};
 					4D3CA1801BFF7182006BDDDA = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0810;
 						TestTargetID = 4D3CA16C1BFF7182006BDDDA;
 					};
 					4D3CA18B1BFF7182006BDDDA = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0810;
 						TestTargetID = 4D3CA16C1BFF7182006BDDDA;
 					};
 				};
@@ -431,8 +434,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -476,8 +481,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -496,6 +503,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -505,15 +513,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = GWLX5H944K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = JinsMemeDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = matz.JinsMemeDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matz.JinsMemeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -521,15 +532,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = GWLX5H944K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = JinsMemeDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = matz.JinsMemeDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matz.JinsMemeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -541,6 +555,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = matz.JinsMemeDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JinsMemeDemo.app/JinsMemeDemo";
 			};
 			name = Debug;
@@ -553,6 +568,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = matz.JinsMemeDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JinsMemeDemo.app/JinsMemeDemo";
 			};
 			name = Release;
@@ -564,6 +580,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = matz.JinsMemeDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = JinsMemeDemo;
 				USES_XCTRUNNER = YES;
 			};
@@ -576,6 +593,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = matz.JinsMemeDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = JinsMemeDemo;
 				USES_XCTRUNNER = YES;
 			};
