@@ -20,7 +20,7 @@ final class ViewController: UITableViewController, MEMELibDelegate {
         MEMELib.sharedInstance().delegate = self
         self.peripherals = []
         self.title = "MEME Demo"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Scan", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("scanButtonPressed"))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Scan", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(scanButtonPressed))
     }
     
     func scanButtonPressed(){
@@ -32,7 +32,7 @@ final class ViewController: UITableViewController, MEMELibDelegate {
         
         var alreadyFound = false
         for p in self.peripherals {
-            if p.identifier == peripheral.identifier {
+            if p.identifier == peripheral.identifier.UUIDString {
                 alreadyFound = true
                 break
             }
@@ -68,11 +68,9 @@ final class ViewController: UITableViewController, MEMELibDelegate {
     }
     
     func memeRealTimeModeDataReceived(data: MEMERealTimeData!) {
-        
-        if (self.dataViewCtl != nil) {
-            self.dataViewCtl.memeRealTimeModeDataReceived(data)
-            RealtimeData.sharedInstance.memeRealTimeModeDataReceived(data)
-        }        
+        guard let _ = self.dataViewCtl else { return }
+        self.dataViewCtl.memeRealTimeModeDataReceived(data)
+        RealtimeData.sharedInstance.memeRealTimeModeDataReceived(data)
     }
     
     func memeAppAuthorized(status: MEMEStatus) {
@@ -136,13 +134,25 @@ final class ViewController: UITableViewController, MEMELibDelegate {
     func checkMEMEStatus(status:MEMEStatus) {
         
         if status == MEME_ERROR_APP_AUTH {
-            UIAlertView(title: "App Auth Failed", message: "Invalid Application ID or Client Secret ", delegate: nil, cancelButtonTitle: "OK").show()
+            let alertController = UIAlertController(title: "App Auth Failed", message: "Invalid Application ID or Client Secret ", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "OK", style: .Default, handler:nil)
+            alertController.addAction(action)
+            self.presentViewController(alertController, animated: true, completion: nil)
         } else if status == MEME_ERROR_SDK_AUTH{
-            UIAlertView(title: "SDK Auth Failed", message: "Invalid SDK. Please update to the latest SDK.", delegate: nil, cancelButtonTitle: "OK").show()
+            let alertController = UIAlertController(title: "SDK Auth Failed", message: "Invalid SDK. Please update to the latest SDK.", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "OK", style: .Default, handler:nil)
+            alertController.addAction(action)
+            self.presentViewController(alertController, animated: true, completion: nil)
         } else if status == MEME_CMD_INVALID {
-            UIAlertView(title: "SDK Error", message: "Invalid Command", delegate: nil, cancelButtonTitle: "OK").show()
+            let alertController = UIAlertController(title: "SDK Error", message: "Invalid Command", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "OK", style: .Default, handler:nil)
+            alertController.addAction(action)
+            self.presentViewController(alertController, animated: true, completion: nil)
         } else if status == MEME_ERROR_BL_OFF {
-            UIAlertView(title: "Error", message: "Bluetooth is off.", delegate: nil, cancelButtonTitle: "OK").show()
+            let alertController = UIAlertController(title: "Error", message: "Bluetooth is off.", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "OK", style: .Default, handler:nil)
+            alertController.addAction(action)
+            self.presentViewController(alertController, animated: true, completion: nil)
         } else if status == MEME_OK {
             print("Status: MEME_OK")
         }

@@ -45,12 +45,12 @@ final class MMDataDetaileViewController: UIViewController {
         
         let toolbar = UIToolbar(frame: CGRectMake(0, self.view.bounds.size.height - 44, self.view.bounds.size.width, 40.0))
         toolbar.layer.position = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height-20.0)
-        let closeBt: UIBarButtonItem = UIBarButtonItem(title: "閉じる", style:.Plain, target: self, action: "dismiss")
+        let closeBt: UIBarButtonItem = UIBarButtonItem(title: "閉じる", style:.Plain, target: self, action: #selector(MMDataDetaileViewController.dismiss))
         closeBt.tag = 1
         toolbar.items = [closeBt]
         self.view.addSubview(toolbar)
         
-        NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updateRealTimeValue"), userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(MMDataDetaileViewController.updateRealTimeValue), userInfo: nil, repeats: true)
     }
     
     // 値の更新
