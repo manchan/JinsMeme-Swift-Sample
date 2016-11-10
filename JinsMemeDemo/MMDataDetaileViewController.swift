@@ -18,39 +18,39 @@ final class MMDataDetaileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white
         
-        labelLb = UILabel(frame: CGRectMake(10 ,10,200,50))
+        labelLb = UILabel(frame: CGRect(x: 10 ,y: 10,width: 200,height: 50))
         labelLb?.text = RealtimeData.sharedInstance.dict[itemNum!]["label"]
         self.view.addSubview(labelLb!)
         
-        textLb = UILabel(frame: CGRectMake(10,
-            30,
-            self.view.frame.size.width - 20,
-            200))
+        textLb = UILabel(frame: CGRect(x: 10,
+            y: 30,
+            width: self.view.frame.size.width - 20,
+            height: 200))
         textLb?.numberOfLines = 0
-        textLb?.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        textLb?.lineBreakMode = NSLineBreakMode.byWordWrapping
         textLb?.text = RealtimeData.sharedInstance.dict[itemNum!]["text"]
         self.view.addSubview(textLb!)
         
-        valueLb = UILabel(frame: CGRectMake(10,
-            self.view.frame.size.height / 2,
-            self.view.frame.size.width - 10,
-            50))
+        valueLb = UILabel(frame: CGRect(x: 10,
+            y: self.view.frame.size.height / 2,
+            width: self.view.frame.size.width - 10,
+            height: 50))
         valueLb?.text = RealtimeData.sharedInstance.dict[itemNum!]["value"]
         
-        valueLb?.font = UIFont.boldSystemFontOfSize(UIFont.labelFontSize())
-        valueLb?.font = UIFont.systemFontOfSize(CGFloat(35))
+        valueLb?.font = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
+        valueLb?.font = UIFont.systemFont(ofSize: CGFloat(35))
         self.view.addSubview(valueLb!)
         
-        let toolbar = UIToolbar(frame: CGRectMake(0, self.view.bounds.size.height - 44, self.view.bounds.size.width, 40.0))
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: self.view.bounds.size.height - 44, width: self.view.bounds.size.width, height: 40.0))
         toolbar.layer.position = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height-20.0)
-        let closeBt: UIBarButtonItem = UIBarButtonItem(title: "閉じる", style:.Plain, target: self, action: #selector(MMDataDetaileViewController.dismiss))
+        let closeBt: UIBarButtonItem = UIBarButtonItem(title: "閉じる", style:.plain, target: self, action: #selector(dismissV))
         closeBt.tag = 1
         toolbar.items = [closeBt]
         self.view.addSubview(toolbar)
         
-        NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(MMDataDetaileViewController.updateRealTimeValue), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(MMDataDetaileViewController.updateRealTimeValue), userInfo: nil, repeats: true)
     }
     
     // 値の更新
@@ -58,8 +58,8 @@ final class MMDataDetaileViewController: UIViewController {
         valueLb?.text = RealtimeData.sharedInstance.dict[itemNum!]["value"]
     }
     
-    func dismiss () {
-        dismissViewControllerAnimated(true, completion: nil)
+    internal func dismissV () {
+        self.dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

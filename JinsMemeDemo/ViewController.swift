@@ -20,7 +20,7 @@ final class ViewController: UITableViewController, MEMELibDelegate {
         MEMELib.sharedInstance().delegate = self
         self.peripherals = []
         self.title = "MEME Demo"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Scan", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(scanButtonPressed))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Scan", style: UIBarButtonItemStyle.plain, target: self, action: #selector(scanButtonPressed))
     }
     
     func scanButtonPressed(){
@@ -28,57 +28,47 @@ final class ViewController: UITableViewController, MEMELibDelegate {
         self.checkMEMEStatus(status)
     }
     
-    func memePeripheralFound(peripheral: CBPeripheral!, withDeviceAddress address: String!) {
+    func memePeripheralFound(_ peripheral: CBPeripheral!, withDeviceAddress address: String!) {
         
-        var alreadyFound = false
-        for p in self.peripherals {
-            if p.identifier == peripheral.identifier.UUIDString {
-                alreadyFound = true
-                break
-            }
-        }
-        
-        if !alreadyFound {
-            print("New Peripheral found \(peripheral.identifier.UUIDString) \(address)")
-            self.peripherals.addObject(peripheral)
-            self.tableView.reloadData()
-        }
+        print("New Peripheral found \(peripheral.identifier.uuidString) \(address)")
+        self.peripherals.add(peripheral)
+        self.tableView.reloadData()
     }
     
-    func memePeripheralConnected(peripheral: CBPeripheral!) {
+    func memePeripheralConnected(_ peripheral: CBPeripheral!) {
         
         print("MEME Device Connected")
-        self.navigationItem.rightBarButtonItem?.enabled = false
-        self.tableView.userInteractionEnabled = false
-        self.performSegueWithIdentifier("DataViewSegue", sender: self)
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
+        self.tableView.isUserInteractionEnabled = false
+        self.performSegue(withIdentifier: "DataViewSegue", sender: self)
 
         // Set Data Mode to Standard Mode
         MEMELib.sharedInstance().startDataReport()
     }
     
-    func memePeripheralDisconnected(peripheral: CBPeripheral!) {
+    func memePeripheralDisconnected(_ peripheral: CBPeripheral!) {
         
         print("MEME Device Disconnected")
-        self.navigationItem.rightBarButtonItem?.enabled = true
-        self.tableView.userInteractionEnabled = true
-        self.dismissViewControllerAnimated(true) { () -> Void in
+        self.navigationItem.rightBarButtonItem?.isEnabled = true
+        self.tableView.isUserInteractionEnabled = true
+        self.dismiss(animated: true) { () -> Void in
             self.dataViewCtl = nil
             print("MEME Device Disconnected")
         }
     }
     
-    func memeRealTimeModeDataReceived(data: MEMERealTimeData!) {
+    func memeRealTimeModeDataReceived(_ data: MEMERealTimeData!) {
         guard let _ = self.dataViewCtl else { return }
         self.dataViewCtl.memeRealTimeModeDataReceived(data)
         RealtimeData.sharedInstance.memeRealTimeModeDataReceived(data)
     }
     
-    func memeAppAuthorized(status: MEMEStatus) {
+    func memeAppAuthorized(_ status: MEMEStatus) {
         self.checkMEMEStatus(status)
     }
     
     
-    func memeCommandResponse(response: MEMEResponse) {
+    func memeCommand(_ response: MEMEResponse) {
         
         print("Command Response - eventCode: \(response.eventCode) - commandResult: \(response.commandResult)")
         
@@ -96,63 +86,63 @@ final class ViewController: UITableViewController, MEMELibDelegate {
     
     // MARK: - Table view data source
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.peripherals.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("DeviceCellIdentifier", forIndexPath: indexPath)
-        let peripheral:CBPeripheral = self.peripherals.objectAtIndex(indexPath.row) as! CBPeripheral
-        cell.textLabel?.text = peripheral.identifier.UUIDString
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DeviceCellIdentifier", for: indexPath)
+        let peripheral:CBPeripheral = self.peripherals.object(at: indexPath.row) as! CBPeripheral
+        cell.textLabel?.text = peripheral.identifier.uuidString
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let peripheral:CBPeripheral = self.peripherals.objectAtIndex(indexPath.row) as! CBPeripheral
-        let status:MEMEStatus = MEMELib.sharedInstance().connectPeripheral(peripheral)
+        let peripheral:CBPeripheral = self.peripherals.object(at: indexPath.row) as! CBPeripheral
+        let status:MEMEStatus = MEMELib.sharedInstance().connect(peripheral)
         self.checkMEMEStatus(status)
         
         print("Start connecting to MEME Device...")
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "DataViewSegue" {
             
-            let naviCtl = segue.destinationViewController as! UINavigationController
+            let naviCtl = segue.destination as! UINavigationController
             self.dataViewCtl = naviCtl.topViewController as! MMDataViewController
         }
     }
 
     
-    func checkMEMEStatus(status:MEMEStatus) {
+    func checkMEMEStatus(_ status:MEMEStatus) {
         
         if status == MEME_ERROR_APP_AUTH {
-            let alertController = UIAlertController(title: "App Auth Failed", message: "Invalid Application ID or Client Secret ", preferredStyle: .Alert)
-            let action = UIAlertAction(title: "OK", style: .Default, handler:nil)
+            let alertController = UIAlertController(title: "App Auth Failed", message: "Invalid Application ID or Client Secret ", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler:nil)
             alertController.addAction(action)
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
         } else if status == MEME_ERROR_SDK_AUTH{
-            let alertController = UIAlertController(title: "SDK Auth Failed", message: "Invalid SDK. Please update to the latest SDK.", preferredStyle: .Alert)
-            let action = UIAlertAction(title: "OK", style: .Default, handler:nil)
+            let alertController = UIAlertController(title: "SDK Auth Failed", message: "Invalid SDK. Please update to the latest SDK.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler:nil)
             alertController.addAction(action)
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
         } else if status == MEME_CMD_INVALID {
-            let alertController = UIAlertController(title: "SDK Error", message: "Invalid Command", preferredStyle: .Alert)
-            let action = UIAlertAction(title: "OK", style: .Default, handler:nil)
+            let alertController = UIAlertController(title: "SDK Error", message: "Invalid Command", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler:nil)
             alertController.addAction(action)
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
         } else if status == MEME_ERROR_BL_OFF {
-            let alertController = UIAlertController(title: "Error", message: "Bluetooth is off.", preferredStyle: .Alert)
-            let action = UIAlertAction(title: "OK", style: .Default, handler:nil)
+            let alertController = UIAlertController(title: "Error", message: "Bluetooth is off.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler:nil)
             alertController.addAction(action)
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
         } else if status == MEME_OK {
             print("Status: MEME_OK")
         }
