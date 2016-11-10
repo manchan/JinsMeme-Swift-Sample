@@ -17,20 +17,20 @@ final class MMDataViewController: UITableViewController {
         super.viewDidLoad()
 
         self.title = "RealTime Data"
-        self.indicatorView = UIView(frame: CGRectMake(0, 0, 24, 24))
+        self.indicatorView = UIView(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
         self.indicatorView?.alpha = 0.20
-        self.indicatorView?.backgroundColor = UIColor.whiteColor()
+        self.indicatorView?.backgroundColor = UIColor.white
         self.indicatorView?.layer.cornerRadius = (self.indicatorView?.frame.size.height)! * 0.5
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.indicatorView!)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Disconnect", style: UIBarButtonItemStyle.Plain, target: self, action:  #selector(MMDataViewController.disconnectButtonPressed))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Disconnect", style: UIBarButtonItemStyle.plain, target: self, action:  #selector(MMDataViewController.disconnectButtonPressed))
     }
     
     func disconnectButtonPressed(){
         MEMELib.sharedInstance().disconnectPeripheral()
     }
     
-    func memeRealTimeModeDataReceived(data: MEMERealTimeData) {
+    func memeRealTimeModeDataReceived(_ data: MEMERealTimeData) {
         
         self.blinkIndicator()
         self.latestRealTimeData = data
@@ -39,18 +39,18 @@ final class MMDataViewController: UITableViewController {
     
     func blinkIndicator(){
         
-        UIView.animateWithDuration(0.05, animations: { () -> Void in
+        UIView.animate(withDuration: 0.05, animations: { () -> Void in
 
-            self.indicatorView?.backgroundColor = UIColor.redColor()
+            self.indicatorView?.backgroundColor = UIColor.red
             
-            }) { (finished:Bool) -> Void in
+            }, completion: { (finished:Bool) -> Void in
                 
-                UIView.animateWithDuration(0.05, delay: 0.02, options: UIViewAnimationOptions.AllowAnimatedContent, animations: { () -> Void in
+                UIView.animate(withDuration: 0.05, delay: 0.02, options: UIViewAnimationOptions.allowAnimatedContent, animations: { () -> Void in
                     
-                    self.indicatorView?.backgroundColor = UIColor.whiteColor()
+                    self.indicatorView?.backgroundColor = UIColor.white
                     
                     }, completion: nil)
-        }
+        }) 
     }
     
 
@@ -61,16 +61,16 @@ final class MMDataViewController: UITableViewController {
     
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 15
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("DataCellIdentifier", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DataCellIdentifier", for: indexPath)
 
         var label = ""
         var value = ""
@@ -264,13 +264,13 @@ final class MMDataViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let indexPath = tableView.indexPathForSelectedRow!
         let tw:Int = indexPath.row
         let vc = MMDataDetaileViewController()
         vc.itemNum = tw
-        self.presentViewController(vc, animated: true, completion: nil)
+        self.present(vc, animated: true, completion: nil)
     }
     
 }
