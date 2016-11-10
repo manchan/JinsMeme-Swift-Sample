@@ -11,6 +11,10 @@
 Code examples for J!NS MEME Realtime data display.  
 Using JINS MEME SDK version 1.0.5.
 
+## Swift version
+- 3.0（latest） https://github.com/manchan/JinsMeme-Swift-Sample/tree/swift3.0
+- 2.3 https://github.com/manchan/JinsMeme-Swift-Sample/tree/swift2.3
+
 
 ## Requirements
 
@@ -20,9 +24,9 @@ Using JINS MEME SDK version 1.0.5.
 
 ##How to build
 
-JUST BUILD with **Xcode 7**.  
+JUST BUILD with **Xcode 8**.  
 Please set AppClientId / ClientScecret at developer site  
-And edit `AppDelegate.swift` at line 20  
+And edit `AppDelegate.swift` at line 19
 More info at https://developers.jins.com/ja/apps/create/  
 
 
